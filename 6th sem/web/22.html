@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web security</title>
+    <style>
+        p{
+            font-size: large;
+        }
+        h2{
+            color: black;
+            font-size: xx-large;
+        }
+        h3{
+            color: gray;
+            font-size: x-large;
+        }
+    </style>
+  </head>
+  <body>
+    <h1>Some of the common web security issues and their prevention</h1>
+    <ul>
+      <li>
+        <h2>Injection flaws</h2>
+        <p>
+          Injection flaws result from a classic failure to filter untrusted
+          input. It can happen when you pass unfiltered data to the SQL server
+          (SQL injection), to the browser (XSS – we’ll talk about this later),
+          to the LDAP server (LDAP injection), or anywhere else. The problem
+          here is that the attacker can inject commands to these entities,
+          resulting in loss of data and hijacking clients’ browsers. Anything
+          that your application receives from untrusted sources must be
+          filtered, preferably according to a whitelist. You should almost never
+          use a blacklist, as getting that right is very hard and usually easy
+          to bypass. Antivirus software products typically provide stellar
+          examples of failing blacklists. Pattern matching does not work.
+        </p>
+        <h3>Prevention</h3>
+        <p>
+          The good news is that protecting against injection is “simply” a
+          matter of filtering your input properly and thinking about whether an
+          input can be trusted. But the bad news is that all input needs to be
+          properly filtered, unless it can unquestionably be trusted (but the
+          saying “never say never” does come to mind here). In a system with
+          1,000 inputs, for example, successfully filtering 999 of them is not
+          sufficient, as this still leaves one field that can serve as the
+          Achilles heal to bring down your system. And you might think that
+          putting an SQL query result into another query is a good idea, as the
+          database is trusted, but if the perimeter is not, the input comes
+          indirectly from guys with malintent. This is called Second Order SQL
+          Injection in case you’re interested. Since filtering is pretty hard to
+          do right (like crypto), what I usually advise is to rely on your
+          framework’s filtering functions: they are proven to work and are
+          thoroughly scrutinized. If you do not use frameworks, you really need
+          to think hard about whether not using them really makes sense in your
+          server security context. 99% of the time it does not.
+        </p>
+      </li>
+
+      <li>
+        <h2>Broken Authentication</h2>
+        <p>
+          This is a collection of multiple problems that might occur during
+          broken authentication, but they don’t all stem from the same root
+          cause. Assuming that anyone still wants to roll their own
+          authentication code in 2014 (what are you thinking??), I advise
+          against it. It is extremely hard to get right, and there are a myriad
+          of possible pitfalls, just to mention a few:<br />
+          1. The URL might contain the session id and leak it in the referer
+          header to someone else.<br />
+          2. The passwords might not be encrypted either in storage or
+          transit.<br />
+          3. The session ids might be predictable, thus gaining access is
+          trivial.<br />
+          4. Session fixation might be possible.<br />
+          5. Session hijacking might be possible, timeouts not implemented right
+          or using HTTP (no SSL security), etc…<br />
+        </p>
+        <h3>Prevention</h3>
+        <p>
+          The most straightforward way to avoid this web security vulnerability
+          is to use a framework. You might be able to implement this correctly,
+          but the former is much easier. In case you do want to roll your own
+          code, be extremely paranoid and educate yourself on what the pitfalls
+          are. There are quite a few.
+        </p>
+      </li>
+
+      <li>
+        <h2>Cross Site Scripting (XSS)</h2>
+        <p>
+          This is a fairly widespread input sanitization failure (essentially a
+          special case of common mistake #1). An attacker gives your web
+          application JavaScript tags on input. When this input is returned to
+          the user unsanitized, the user’s browser will execute it. It can be as
+          simple as crafting a link and persuading a user to click it, or it can
+          be something much more sinister. On page load the script runs and, for
+          example, can be used to post your cookies to the attacker.
+        </p>
+        <h3>Prevention</h3>
+        <p>
+          There’s a simple web security solution: don’t return HTML tags to the
+          client. This has the added benefit of defending against HTML
+          injection, a similar attack whereby the attacker injects plain HTML
+          content (such as images or loud invisible flash players) – not
+          high-impact but surely annoying (“please make it stop!”). Usually, the
+          workaround is simply converting all HTML entities, so that script is
+          returned as &lt;script&gt;. The other often employed method of
+          sanitization is using regular expressions to strip away HTML tags
+          using regular expressions on < and >, but this is dangerous as a lot
+          of browsers will interpret severely broken HTML just fine. Better to
+          convert all characters to their escaped counterparts.
+        </p>
+      </li>
+
+      <li>
+        <h2>Insecure Direct Object References</h2>
+        <p>
+          This is a classic case of trusting user input and paying the price in
+          a resulting security vulnerability. A direct object reference means
+          that an internal object such as a file or database key is exposed to
+          the user. The problem with this is that the attacker can provide this
+          reference and, if authorization is either not enforced (or is broken),
+          the attacker can access or do things that they should be precluded
+          from. For example, the code has a download.php module that reads and
+          lets the user download files, using a CGI parameter to specify the
+          file name (e.g., download.php?file=something.txt). Either by mistake
+          or due to laziness, the developer omitted authorization from the code.
+          The attacker can now use this to download any system files that the
+          user running PHP has access to, like the application code itself or
+          other data left lying around on the server, like backups. Uh-oh.
+          Another common vulnerability example is a password reset function that
+          relies on user input to determine whose password we’re resetting.
+          After clicking the valid URL, an attacker can just modify the username
+          field in the URL to say something like “admin”. Incidentally, both of
+          these examples are things I myself have seen appearing often “in the
+          wild”.
+        </p>
+        <h3>Prevention</h3>
+        <p>
+          Perform user authorization properly and consistently, and whitelist
+          the choices. More often than not though, the whole problem can be
+          avoided by storing data internally and not relying on it being passed
+          from the client via CGI parameters. Session variables in most
+          frameworks are well suited for this purpose.
+        </p>
+      </li>
+
+      <li>
+        <h2>Security misconfiguration</h2>
+        <p>
+          In my experience, web servers and applications that have been
+          misconfigured are way more common than those that have been configured
+          properly. Perhaps this because there is no shortage of ways to screw
+          up. Some examples:<br />
+          1. Running the application with debug enabled in production.<br />
+          2. Having directory listing enabled on the server, which leaks
+          valuable information.<br />
+          3. Running outdated software (think WordPress plugins, old
+          PhpMyAdmin).<br />
+          4. Having unnecessary services running on the machine.<br />
+          5. Not changing default keys and passwords. (Happens way more
+          frequently than you’d believe!)<br />
+          6. Revealing error handling information to the attackers, such as
+          stack traces.<br />
+        </p>
+        <h3>Prevention</h3>
+        <p>
+          Have a good (preferably automated) “build and deploy” process, which
+          can run tests on deploy. The poor man’s security misconfiguration
+          solution is post-commit hooks, to prevent the code from going out with
+          default passwords and/or development stuff built in.
+        </p>
+      </li>
+
+      <li>
+        <h2>Sensitive data exposure</h2>
+        <p>
+          This web security vulnerability is about crypto and resource
+          protection. Sensitive data should be encrypted at all times, including
+          in transit and at rest. No exceptions. Credit card information and
+          user passwords should never travel or be stored unencrypted, and
+          passwords should always be hashed. Obviously the crypto/hashing
+          algorithm must not be a weak one – when in doubt, web security
+          standards recommend AES (256 bits and up) and RSA (2048 bits and up).
+          And while it goes without saying that session IDs and sensitive data
+          should not be traveling in the URLs and sensitive cookies should have
+          the secure flag on, this is very important and cannot be
+          over-emphasized.
+        </p>
+        <h3>Prevention</h3>
+        <p>
+          • In transit: Use HTTPS with a proper certificate and PFS (Perfect
+          Forward Secrecy). Do not accept anything over non-HTTPS connections.
+          Have the secure flag on cookies.<br/>
+           • In storage: This is harder. First and foremost, you need to lower your exposure. If you don’t need
+          sensitive data, shred it. Data you don’t have can’t be stolen. Do not
+          store credit card information ever, as you probably don’t want to have
+          to deal with being PCI compliant. Sign up with a payment processor
+          such as Stripe or Braintree. Second, if you have sensitive data that
+          you actually do need, store it encrypted and make sure all passwords
+          are hashed. For hashing, use of bcrypt is recommended. If you don’t
+          use bcrypt, educate yourself on salting and rainbow tables.<br/> And at the
+          risk of stating the obvious, do not store the encryption keys next to
+          the protected data. That’s like storing your bike with a lock that has
+          the key in it. Protect your backups with encryption and keep your keys
+          very private. And of course, don’t lose the keys!
+        </p>
+      </li>
+    </ul>
+  </body>
+</html>

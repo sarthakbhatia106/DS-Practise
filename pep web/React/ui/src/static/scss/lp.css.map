@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAEI,QAFI,CAEJ,UAAU,CAAC;EACP,MAAM,EAAE,KAAK;EACb,KAAK,EAAE,KAAK;CACf",
+    "sources": [
+        "lp.scss"
+    ],
+    "names": [],
+    "file": "lp.css"
+}

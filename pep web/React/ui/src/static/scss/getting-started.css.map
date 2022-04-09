@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAKE,eALa,CAKb,cAAc,CAAA;EACZ,MAAM,EAAE,cAAc;CACvB",
+    "sources": [
+        "getting-started.scss"
+    ],
+    "names": [],
+    "file": "getting-started.css"
+}

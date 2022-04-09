@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cookies</title>
+    <style>
+      p {
+        font-size: x-large;
+      }
+      button {
+        background-color: #4caf50;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>What are Cookies?</h1>
+    <p>
+      Cookies are data, stored in small text files, on your computer. When a web
+      server has sent a web page to a browser, the connection is shut down, and
+      the server forgets everything about the user. Cookies were invented to
+      solve the problem "how to remember information about the user":<br />
+      1. When a user visits a web page, his/her name can be stored in a
+      cookie.<br />
+      2. Next time the user visits the page, the cookie "remembers" his/her
+      name.<br />
+      Cookies are saved in name-value pairs like:<br />
+      username = Sarthak Bhatia<br />
+      When a browser requests a web page from a server, cookies belonging to the
+      page are added to the request. This way the server gets the necessary data
+      to "remember" information about users.
+    </p>
+    <h1>Create a Cookie with JavaScript</h1>
+    <p>
+      JavaScript can create, read, and delete cookies with the document.cookie
+      property. With JavaScript, a cookie can be created like this:<br />
+
+      <em>document.cookie = "username=Sarthak Bhatia";</em><br />
+      You can also add an expiry date (in UTC time). By default, the cookie is
+      deleted when the browser is closed:<br />
+
+      <em
+        >document.cookie = "username=Sarthak Bhatia; expires=Thu, 18 Dec 2013 12:00:00
+        UTC";</em
+      ><br />
+      With a path parameter, you can tell the browser what path the cookie
+      belongs to. By default, the cookie belongs to the current page.<br />
+
+      <em
+        >document.cookie = "username=Sarthak Bhatia; expires=Thu, 18 Dec 2013 12:00:00
+        UTC; path=/";</em
+      >
+    </p>
+
+    <h1>Read a Cookie with JavaScript</h1>
+    <p>
+      With JavaScript, cookies can be read like this:<br />
+      <em>var x = document.cookie;</em>
+    </p>
+
+    <h1>Change a Cookie with JavaScript</h1>
+    <p>
+      With JavaScript, you can change a cookie the same way as you create it:<br />
+      <em
+        >document.cookie = "username=Sarthak Bhatia; expires=Thu, 18 Dec 2013
+        12:00:00 UTC; path=/";</em
+      ><br />
+      The old cookie is overwritten.
+    </p>
+
+    <h1>Delete a Cookie with JavaScript</h1>
+    <p>
+      Deleting a cookie is very simple. You don't have to specify a cookie value
+      when you delete a cookie. Just set the expires parameter to a past
+      date:<br />
+
+      <em
+        >document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC;
+        path=/;";</em
+      ><br />
+    </p>
+
+    <h1>
+        Live Demo
+    </h1>
+    <p>
+        Here if we click on the button a web page open where user selects a colour and that colour is saved in cookies.
+        Even after refreshing or closing the browser colour remains the same.
+    </p>
+
+    <button>Click here to go to live demo</button>
+
+    <script>
+      let btn = document.querySelector("button");
+      btn.addEventListener("click", function () {
+        location.assign("cookiesDemo.html");
+      });
+    </script>
+  </body>
+</html>

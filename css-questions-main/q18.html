@@ -1,0 +1,34 @@
+<!-- Q- Create a loader without changing the given html -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .loading{
+        border: 15px solid lightgray;
+        height: 120px;
+        width: 120px;
+        border-radius: 50%;
+        border-top: 15px solid rgb(24, 149, 190);
+        animation: spin 1.5s infinite;
+      }
+
+      @keyframes spin {
+        0%{
+          transform: rotate(0deg);
+        }
+        100%{
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="loading"></div>
+  </body>
+</html>

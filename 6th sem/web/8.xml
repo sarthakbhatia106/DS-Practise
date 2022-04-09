@@ -1,0 +1,67 @@
+<?xml version = "1.0"?>
+
+<?xml-stylesheet type = "text/xsl" href = "8.xsl"?>
+
+<breakfast_menu>
+
+    <food>
+
+        <name>Belgian Waffles</name>
+
+        <price>Rs. 250</price>
+
+        <description>two of our famous Belgian Waffles with plenty of real maple syrup</description>
+
+        <calories>650</calories>
+
+    </food>
+
+    <food>
+
+        <name>Strawberry Belgian Waffles</name>
+
+        <price>Rs. 240</price>
+
+        <description>light Belgian waffles covered with strawberries and whipped cream</description>
+
+        <calories>900</calories>
+
+    </food>
+
+    <food>
+
+        <name>Berry-Berry Belgian Waffles</name>
+
+        <price>Rs. 300</price>
+
+        <description>light Belgian waffles covered with an assortment of fresh berries and whipped cream</description>
+
+        <calories>900</calories>
+
+    </food>
+
+    <food>
+
+        <name>French Toast</name>
+
+        <price>Rs. 200</price>
+
+        <description>thick slices made from our homemade sourdough bread</description>
+
+        <calories>600</calories>
+
+    </food>
+
+    <food>
+
+        <name>Homestyle Breakfast</name>
+
+        <price>Rs. 260</price>
+
+        <description>two eggs, bacon or sausage, toast, and our ever-popular hash browns</description>
+
+        <calories>950</calories>
+
+    </food>
+
+</breakfast_menu>

@@ -1,0 +1,49 @@
+<!-- Q- Using html code below write css to create image-final  -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+      <style>
+        *{
+          box-sizing: border-box;
+          margin: 0;
+        }
+        body{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          min-height: 100vh;
+        }
+        .container{
+          display: flex;
+        }
+        .avatars{
+          width: 10rem;
+          height: 10rem;
+          border: 5px solid white;
+          display: flex;
+          border-radius: 50%;
+          background-color: lightgray;
+          align-items: center;
+          justify-content: center;
+          color: white;
+          font-size: 80px;
+          position: relative;
+          background-size: cover;
+          font-family: "Open-sans",sans-serif;
+        }
+      </style>
+  </head>
+  <body>
+      <div class="container">
+      <div class="avatars" style="background-image: url(m1.jpg); left: 70px"></div>
+      <div class="avatars" style="background-image: url(m2.jpg); left: 50px"></div>
+      <div class="avatars" style="background-image: url(m3.jpg);left: 30px"></div>
+      <div class="avatars">+2</div>
+    </div>
+  </body>
+</html>

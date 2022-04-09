@@ -1,0 +1,17 @@
+@import '../Variables/Variables.scss';
+.navbar{
+    width: 100%;
+    height: 80px;
+    background-color: $blackColor;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.navbar a{
+    color: $whiteColor;
+    font-size: large;
+    text-decoration: none;
+    margin: 10px;
+    font-family: $titleFont;
+}

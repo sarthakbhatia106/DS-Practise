@@ -1,0 +1,490 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch crossWord",
+            "request": "launch",
+            "mainClass": "Backtracking.crossWord",
+            "projectName": "pepLevelUp_17c65a10"
+        },
+        {
+            "type": "java",
+            "name": "Launch magnets",
+            "request": "launch",
+            "mainClass": "Backtracking.magnets",
+            "projectName": "pepLevelUp_17c65a10"
+        },
+        {
+            "type": "java",
+            "name": "Launch guessKthZero",
+            "request": "launch",
+            "mainClass": "BinarySearch.guessKthZero",
+            "projectName": "pepLevelUp_17c65a10"
+        },
+        {
+            "type": "java",
+            "name": "Launch cooldown",
+            "request": "launch",
+            "mainClass": "DP.BuyAndSellStocks.cooldown",
+            "projectName": "pepLevelUp_17c65a10"
+        },
+        {
+            "type": "java",
+            "name": "Launch kTransactions",
+            "request": "launch",
+            "mainClass": "DP.BuyAndSellStocks.kTransactions",
+            "projectName": "pepLevelUp_17c65a10"
+        },
+        {
+            "type": "java",
+            "name": "Launch multipltTransactions",
+            "request": "launch",
+            "mainClass": "DP.BuyAndSellStocks.multipltTransactions",
+            "projectName": "pepLevelUp_17c65a10"
+        },
+        {
+            "type": "java",
+            "name": "Launch singleTransaction",
+            "request": "launch",
+            "mainClass": "DP.BuyAndSellStocks.singleTransaction",
+            "projectName": "pepLevelUp_17c65a10"
+        },
+        {
+            "type": "java",
+            "name": "Launch transactionFee",
+            "request": "launch",
+            "mainClass": "DP.BuyAndSellStocks.transactionFee",
+            "projectName": "pepLevelUp_17c65a10"
+        },
+        {
+            "type": "java",
+            "name": "Launch twoTransactions",
+            "request": "launch",
+            "mainClass": "DP.BuyAndSellStocks.twoTransactions",
+            "projectName": "pepLevelUp_17c65a10"
+        },
+        {
+            "type": "java",
+            "name": "Launch classyNumber",
+            "request": "launch",
+            "mainClass": "DP.DigitDP.classyNumber",
+            "projectName": "pepLevelUp_17c65a10"
+        },
+        {
+            "type": "java",
+            "name": "Launch totalPalindromeNumber",
+            "request": "launch",
+            "mainClass": "DP.DigitDP.totalPalindromeNumber",
+            "projectName": "pepLevelUp_17c65a10"
+        },
+        {
+            "type": "java",
+            "name": "Launch EggBreakingProblem",
+            "request": "launch",
+            "mainClass": "DP.EggBreakingProblem",
+            "projectName": "pepLevelUp_17c65a10"
+        },
+        {
+            "type": "java",
+            "name": "Launch billBoard",
+            "request": "launch",
+            "mainClass": "DP.billBoard",
+            "projectName": "pepLevelUp_17c65a10"
+        },
+        {
+            "type": "java",
+            "name": "Launch booleanParenthization",
+            "request": "launch",
+            "mainClass": "DP.booleanParenthization",
+            "projectName": "pepLevelUp_17c65a10"
+        },
+        {
+            "type": "java",
+            "name": "Launch buildingBridges",
+            "request": "launch",
+            "mainClass": "DP.buildingBridges",
+            "projectName": "pepLevelUp_17c65a10"
+        },
+        {
+            "type": "java",
+            "name": "Launch catalan",
+            "request": "launch",
+            "mainClass": "DP.catalan",
+            "projectName": "pepLevelUp_17c65a10"
+        },
+        {
+            "type": "java",
+            "name": "Launch cherryPickupProblem",
+            "request": "launch",
+            "mainClass": "DP.cherryPickupProblem",
+            "projectName": "pepLevelUp_17c65a10"
+        },
+        {
+            "type": "java",
+            "name": "Launch cherryPickupProblem2",
+            "request": "launch",
+            "mainClass": "DP.cherryPickupProblem2",
+            "projectName": "pepLevelUp_17c65a10"
+        },
+        {
+            "type": "java",
+            "name": "Launch jobSequencing",
+            "request": "launch",
+            "mainClass": "DP.jobSequencing",
+            "projectName": "pepLevelUp_17c65a10"
+        },
+        {
+            "type": "java",
+            "name": "Launch knapsacksBoth",
+            "request": "launch",
+            "mainClass": "DP.knapsacksBoth",
+            "projectName": "pepLevelUp_17c65a10"
+        },
+        {
+            "type": "java",
+            "name": "Launch longestBitonicSub",
+            "request": "launch",
+            "mainClass": "DP.longestBitonicSub",
+            "projectName": "pepLevelUp_17c65a10"
+        },
+        {
+            "type": "java",
+            "name": "Launch mcm",
+            "request": "launch",
+            "mainClass": "DP.mcm",
+            "projectName": "pepLevelUp_17c65a10"
+        },
+        {
+            "type": "java",
+            "name": "Launch minAndMaxOfAnOperation",
+            "request": "launch",
+            "mainClass": "DP.minAndMaxOfAnOperation",
+            "projectName": "pepLevelUp_17c65a10"
+        },
+        {
+            "type": "java",
+            "name": "Launch minNoOfIncSubsequences",
+            "request": "launch",
+            "mainClass": "DP.minNoOfIncSubsequences",
+            "projectName": "pepLevelUp_17c65a10"
+        },
+        {
+            "type": "java",
+            "name": "Launch optimalBST",
+            "request": "launch",
+            "mainClass": "DP.optimalBST",
+            "projectName": "pepLevelUp_17c65a10"
+        },
+        {
+            "type": "java",
+            "name": "Launch optimalStratergy",
+            "request": "launch",
+            "mainClass": "DP.optimalStratergy",
+            "projectName": "pepLevelUp_17c65a10"
+        },
+        {
+            "type": "java",
+            "name": "Launch palindromeSubsequence",
+            "request": "launch",
+            "mainClass": "DP.palindromeSubsequence",
+            "projectName": "pepLevelUp_17c65a10"
+        },
+        {
+            "type": "java",
+            "name": "Launch probabOfKnights",
+            "request": "launch",
+            "mainClass": "DP.probabOfKnights",
+            "projectName": "pepLevelUp_17c65a10"
+        },
+        {
+            "type": "java",
+            "name": "Launch superUglyNumber",
+            "request": "launch",
+            "mainClass": "DP.superUglyNumber",
+            "projectName": "pepLevelUp_17c65a10"
+        },
+        {
+            "type": "java",
+            "name": "Launch MaxFlowGraph",
+            "request": "launch",
+            "mainClass": "Graph.MaxFlowGraph",
+            "projectName": "pepLevelUp_17c65a10"
+        },
+        {
+            "type": "java",
+            "name": "Launch bellmanFord",
+            "request": "launch",
+            "mainClass": "Graph.Striver.bellmanFord",
+            "projectName": "pepLevelUp_17c65a10"
+        },
+        {
+            "type": "java",
+            "name": "Launch bridgeAndArticulationPointStriver",
+            "request": "launch",
+            "mainClass": "Graph.Striver.bridgeAndArticulationPointStriver",
+            "projectName": "pepLevelUp_17c65a10"
+        },
+        {
+            "type": "java",
+            "name": "Launch cycleDetectionBFSKahn",
+            "request": "launch",
+            "mainClass": "Graph.Striver.cycleDetectionBFSKahn",
+            "projectName": "pepLevelUp_17c65a10"
+        },
+        {
+            "type": "java",
+            "name": "Launch cycleDetectionDFS",
+            "request": "launch",
+            "mainClass": "Graph.Striver.cycleDetectionDFS",
+            "projectName": "pepLevelUp_17c65a10"
+        },
+        {
+            "type": "java",
+            "name": "Launch kosaRaju",
+            "request": "launch",
+            "mainClass": "Graph.Striver.kosaRaju",
+            "projectName": "pepLevelUp_17c65a10"
+        },
+        {
+            "type": "java",
+            "name": "Launch kruskals",
+            "request": "launch",
+            "mainClass": "Graph.Striver.kruskals",
+            "projectName": "pepLevelUp_17c65a10"
+        },
+        {
+            "type": "java",
+            "name": "Launch primsAlgorithm",
+            "request": "launch",
+            "mainClass": "Graph.Striver.primsAlgorithm",
+            "projectName": "pepLevelUp_17c65a10"
+        },
+        {
+            "type": "java",
+            "name": "Launch shortestPathDAG",
+            "request": "launch",
+            "mainClass": "Graph.Striver.shortestPathDAG",
+            "projectName": "pepLevelUp_17c65a10"
+        },
+        {
+            "type": "java",
+            "name": "Launch shortestPathUG",
+            "request": "launch",
+            "mainClass": "Graph.Striver.shortestPathUG",
+            "projectName": "pepLevelUp_17c65a10"
+        },
+        {
+            "type": "java",
+            "name": "Launch topoSortDFS",
+            "request": "launch",
+            "mainClass": "Graph.Striver.topoSortDFS",
+            "projectName": "pepLevelUp_17c65a10"
+        },
+        {
+            "type": "java",
+            "name": "Launch topoSortKahn",
+            "request": "launch",
+            "mainClass": "Graph.Striver.topoSortKahn",
+            "projectName": "pepLevelUp_17c65a10"
+        },
+        {
+            "type": "java",
+            "name": "Launch articulationPoint",
+            "request": "launch",
+            "mainClass": "Graph.articulationPoint",
+            "projectName": "pepLevelUp_17c65a10"
+        },
+        {
+            "type": "java",
+            "name": "Launch bridges",
+            "request": "launch",
+            "mainClass": "Graph.bridges",
+            "projectName": "pepLevelUp_17c65a10"
+        },
+        {
+            "type": "java",
+            "name": "Launch dijkstra",
+            "request": "launch",
+            "mainClass": "Graph.dijkstra",
+            "projectName": "pepLevelUp_17c65a10"
+        },
+        {
+            "type": "java",
+            "name": "Launch mst",
+            "request": "launch",
+            "mainClass": "Graph.mst",
+            "projectName": "pepLevelUp_17c65a10"
+        },
+        {
+            "type": "java",
+            "name": "Launch tarjanAlgo",
+            "request": "launch",
+            "mainClass": "Graph.tarjanAlgo",
+            "projectName": "pepLevelUp_17c65a10"
+        },
+        {
+            "type": "java",
+            "name": "Launch hashMap",
+            "request": "launch",
+            "mainClass": "Hashmap.hashMap",
+            "projectName": "pepLevelUp_17c65a10"
+        },
+        {
+            "type": "java",
+            "name": "Launch hashMapPair",
+            "request": "launch",
+            "mainClass": "Hashmap.hashMapPair",
+            "projectName": "pepLevelUp_17c65a10"
+        },
+        {
+            "type": "java",
+            "name": "Launch largestSubarrayWithContiguousElements",
+            "request": "launch",
+            "mainClass": "Hashmap.largestSubarrayWithContiguousElements",
+            "projectName": "pepLevelUp_17c65a10"
+        },
+        {
+            "type": "java",
+            "name": "Launch modeOfFrequencies",
+            "request": "launch",
+            "mainClass": "Hashmap.modeOfFrequencies",
+            "projectName": "pepLevelUp_17c65a10"
+        },
+        {
+            "type": "java",
+            "name": "Launch potionsH",
+            "request": "launch",
+            "mainClass": "Hashmap.potionsH",
+            "projectName": "pepLevelUp_17c65a10"
+        },
+        {
+            "type": "java",
+            "name": "Launch sameDiff",
+            "request": "launch",
+            "mainClass": "Hashmap.sameDiff",
+            "projectName": "pepLevelUp_17c65a10"
+        },
+        {
+            "type": "java",
+            "name": "Launch slidingWindowMedian",
+            "request": "launch",
+            "mainClass": "Hashmap.slidingWindowMedian",
+            "projectName": "pepLevelUp_17c65a10"
+        },
+        {
+            "type": "java",
+            "name": "Launch NastiaandNearlyGoodNumbers",
+            "request": "launch",
+            "mainClass": "NastiaandNearlyGoodNumbers",
+            "projectName": "pepLevelUp_17c65a10"
+        },
+        {
+            "type": "java",
+            "name": "Launch segmentTreeMax",
+            "request": "launch",
+            "mainClass": "RangeQuery.segmentTreeMax",
+            "projectName": "pepLevelUp_17c65a10"
+        },
+        {
+            "type": "java",
+            "name": "Launch segmentTreeSum",
+            "request": "launch",
+            "mainClass": "RangeQuery.segmentTreeSum",
+            "projectName": "pepLevelUp_17c65a10"
+        },
+        {
+            "type": "java",
+            "name": "Launch sparseTable",
+            "request": "launch",
+            "mainClass": "RangeQuery.sparseTable",
+            "projectName": "pepLevelUp_17c65a10"
+        },
+        {
+            "type": "java",
+            "name": "Launch constructBSTFromPost",
+            "request": "launch",
+            "mainClass": "Tree.constructBSTFromPost",
+            "projectName": "pepLevelUp_17c65a10"
+        },
+        {
+            "type": "java",
+            "name": "Launch fenwickTree",
+            "request": "launch",
+            "mainClass": "Tree.fenwickTree",
+            "projectName": "pepLevelUp_17c65a10"
+        },
+        {
+            "type": "java",
+            "name": "Launch lostTree",
+            "request": "launch",
+            "mainClass": "Tree.lostTree",
+            "projectName": "pepLevelUp_17c65a10"
+        },
+        {
+            "type": "java",
+            "name": "Launch vivekInterviewBruteForce",
+            "request": "launch",
+            "mainClass": "Tree.vivekInterviewBruteForce",
+            "projectName": "pepLevelUp_17c65a10"
+        },
+        {
+            "type": "java",
+            "name": "Launch buddyNim",
+            "request": "launch",
+            "mainClass": "buddyNim",
+            "projectName": "pepLevelUp_17c65a10"
+        },
+        {
+            "type": "java",
+            "name": "Launch lcmChallenge",
+            "request": "launch",
+            "mainClass": "lcmChallenge",
+            "projectName": "pepLevelUp_17c65a10"
+        },
+        {
+            "type": "java",
+            "name": "Launch minTimeToBuildBlocks",
+            "request": "launch",
+            "mainClass": "minTimeToBuildBlocks",
+            "projectName": "pepLevelUp_17c65a10"
+        },
+        {
+            "type": "java",
+            "name": "Launch queens",
+            "request": "launch",
+            "mainClass": "queens",
+            "projectName": "pepLevelUp_17c65a10"
+        },
+        {
+            "type": "java",
+            "name": "Launch segmentedSeive",
+            "request": "launch",
+            "mainClass": "segmentedSeive",
+            "projectName": "pepLevelUp_17c65a10"
+        },
+        {
+            "type": "java",
+            "name": "Launch snippet",
+            "request": "launch",
+            "mainClass": "snippet",
+            "projectName": "pepLevelUp_17c65a10"
+        },
+        {
+            "type": "java",
+            "name": "Launch test",
+            "request": "launch",
+            "mainClass": "test",
+            "projectName": "pepLevelUp_17c65a10"
+        }
+    ]
+}

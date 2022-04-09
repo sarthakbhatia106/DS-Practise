@@ -1,0 +1,143 @@
+Question 1---
+
+import java.util.*;
+
+public class QuesA {
+    public static void main(String[] args) {
+        Scanner scn = new Scanner(System.in);
+        int n = scn.nextInt();
+        int[] arr = new int[n];
+
+        for (int i = 0; i < n; i++) {
+            arr[i] = scn.nextInt();
+        }
+
+        int target = scn.nextInt();
+        solve(arr, 0, 0, target, new ArrayList<>(), new HashSet<>());
+    }
+
+    private static void solve(int[] arr, int idx, int sum, int target, ArrayList<Integer> ans, HashSet<String> set) {
+        if (sum == target) {
+            Collections.sort(ans);
+            StringBuilder sb = new StringBuilder();
+            for (int i : ans) {
+                sb.append(i + "#");
+            }
+            if (!set.contains(sb.toString())) {
+                System.out.println(ans);
+                set.add(sb.toString());
+            }
+            return;
+        }
+
+        for (int i = idx; i < arr.length; i++) {
+            if (sum + arr[i] <= target) {
+                ans.add(arr[i]);
+                solve(arr, i + 1, sum + arr[i], target, ans, set);
+                ans.remove(ans.size() - 1);
+            }
+        }
+
+    }
+}
+
+
+Question 2----
+
+import java.util.*;
+
+public class QuesB {
+    public static void main(String[] args) {
+        Scanner scn=new Scanner(System.in);
+        int n1=scn.nextInt();
+        HashSet<Integer> set1=new HashSet<>();
+        for(int i=0;i<n1;i++){
+            set1.add(scn.nextInt());
+        }
+
+        HashSet<Integer> set2=new HashSet<>();
+        int n2=scn.nextInt();
+        for(int i=0;i<n2;i++){
+            set2.add(scn.nextInt());
+        }
+
+        System.out.print("Output: ");
+        for(int i:set1){
+            if(set2.contains(i)){
+                System.out.print(i+" ");
+            }
+        }
+    }    
+}
+
+
+Question 3---
+
+import java.util.*;
+
+public class QuesC {
+    public static void main(String[] args) {
+        Scanner scn=new Scanner(System.in);
+        
+        int a=scn.nextInt();
+        int b=scn.nextInt();
+        int c=scn.nextInt();
+        int n=scn.nextInt();
+
+        System.out.println(nthGeekonacci(a,b,c,n));
+    }
+
+    private static int nthGeekonacci(int a, int b, int c, int n) {
+        if(n==1){
+            return a;
+        }else if(n==2){
+            return b;
+        }else if(n==3){
+            return c;
+        }
+        return nthGeekonacci(a, b, c, n-1)+nthGeekonacci(a, b, c, n-2)+nthGeekonacci(a, b, c, n-3);
+    }    
+}
+
+
+Question 4---
+
+import java.util.*;
+
+public class QuesD {
+    public static void main(String[] args) {
+        Scanner scn=new Scanner(System.in);
+        
+        int n=scn.nextInt();
+        int m=scn.nextInt();
+        int [][]arr=new int[n][m];
+
+        for(int i=0;i<n;i++){
+            for(int j=0;j<m;j++){
+                arr[i][j]=scn.nextInt();
+            }
+        }
+        int ans=0;
+        for(int i=0;i<n;i++){
+            for(int j=0;j<m;j++){
+                if(arr[i][j]==1){
+                    dfs(arr,i,j);
+                    ans++;
+                }
+            }
+        }
+        System.out.println(ans);
+    }
+
+    private static void dfs(int[][] arr, int i, int j) {
+        if(i<0 || j<0 || i>=arr.length || j>=arr[0].length || arr[i][j]==0){
+            return;
+        }
+
+        arr[i][j]=0;
+        dfs(arr, i-1, j);
+        dfs(arr, i, j-1);
+        dfs(arr, i, j+1);
+        dfs(arr, i+1, j);
+    }    
+}

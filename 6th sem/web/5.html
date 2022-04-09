@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        width: 100vw;
+        display: flex;
+      }
+      p {
+        font-size: larger;
+        margin: 10px;
+      }
+      .math {
+        height: 100%;
+        width: 25vw;
+      }
+      .dates {
+        height: 100%;
+        width: 25vw;
+      }
+      .Sting {
+        height: 100%;
+        width: 25vw;
+      }
+      .Array {
+        height: 100%;
+        width: 25vw;
+        position: absolute;
+        right: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="math">
+      <h1>JavaScript Math Object</h1>
+
+      <p id="first"></p>
+
+      <p id="second"></p>
+    </div>
+    <div class="dates">
+      <h1>JavaScript Date Object</h1>
+      <p id="date"></p>
+    </div>
+    <div class="String">
+      <h1>JavaScript String Object</h1>
+      <p id="str"></p>
+    </div>
+    <div class="Array">
+      <h1>JavaScript Array Object</h1>
+      <p id="arr"></p>
+    </div>
+
+    <!-- Script to return math property values -->
+    <script>
+      document.getElementById("first").innerHTML =
+        "<p>Math.LN10: " +
+        Math.LN10 +
+        "</p>" +
+        "<p>Math.LOG2E: " +
+        Math.LOG2E +
+        "</p>" +
+        "<p>Math.Log10E: " +
+        Math.LOG10E +
+        "</p>" +
+        "<p>Math.SQRT2: " +
+        Math.SQRT2 +
+        "</p>" +
+        "<p>Math.SQRT1_2: " +
+        Math.SQRT1_2 +
+        "</p>" +
+        "<p>Math.LN2: " +
+        Math.LN2 +
+        "</p>" +
+        "<p>Math.E: " +
+        Math.E +
+        "</p>" +
+        "<p>Math.PI: " +
+        Math.PI;
+
+      document.getElementById("second").innerHTML =
+        "<p>Math.abs(-4.7): " +
+        Math.abs(-4.7) +
+        "</p>" +
+        "<p>Math.ceil(4.4): " +
+        Math.ceil(4.4) +
+        "</p>" +
+        "<p>Math.floor(4.7): " +
+        Math.floor(4.7) +
+        "</p>" +
+        "<p>Math.sin(90 * Math.PI / 180): " +
+        Math.sin((90 * Math.PI) / 180) +
+        "</p>" +
+        "<p>Math.min(0, 150, 30, 20, -8, -200):</b> " +
+        Math.min(0, 150, 30, 20, -8, -200) +
+        "</p>" +
+        "<p>Math.random(): " +
+        Math.random() +
+        "</p>";
+
+      const d = new Date();
+      document.getElementById("date").innerHTML =
+        "<p> Time:" +
+        d.getTime() +
+        "</p>" +
+        "<p> Full Year:" +
+        d.getFullYear() +
+        "</p>" +
+        "<p> Month:" +
+        d.getMonth() +
+        "</p>" +
+        "<p> Date:" +
+        d.getDate() +
+        "</p>" +
+        "<p> Hours:" +
+        d.getHours() +
+        "</p>" +
+        "<p> Minutes:" +
+        d.getMinutes() +
+        "</p>" +
+        "<p> Hours:" +
+        d.getSeconds() +
+        "</p>";
+
+      let s = "abcdef";
+      document.getElementById("str").innerHTML =
+        "<p><b>String= abcdef</b></p>" +
+        "<p> Length:" +
+        s.length +
+        "</p>" +
+        "<p> Index of 'e':" +
+        s.indexOf("e") +
+        "</p>" +
+        "<p> Search 'c':" +
+        s.search("c") +
+        "</p>" +
+        "<p> Slice 2nd index:" +
+        s.slice(2) +
+        "</p>" +
+        "<p> Substring from 3 to last:" +
+        s.substring(3) +
+        "</p>" +
+        "<p> Concat 'ghi':" +
+        s.concat("ghi") +
+        "</p>" +
+        "<p> Replace 'a' with 'z':" +
+        s.replace("a", "d") +
+        "</p>";
+
+      const fruits = ["Banana", "Orange", "Apple", "Mango"];
+      document.getElementById("arr").innerHTML =
+        "<p><b>Array= ['Banana', 'Orange', 'Apple', 'Mango']</b></p>" +
+        "<p> Length:" +
+        fruits.length +
+        "</p>" +
+        "<p> Remove 'Mango' from last:" +
+        fruits.pop() +
+        "<br> <b>[" +
+        fruits +
+        "]</b>" +
+        "</p>" +
+        "<p> Add 'Kiwi' at last:" +
+        fruits.push("Kiwi") +
+        "<br> <b>[" +
+        fruits +
+        "]</b>" +
+        "</p>" +
+        "<p> Add 'Kiwi' at first:" +
+        fruits.unshift("Kiwi") +
+        "<br> <b>[" +
+        fruits +
+        "]</b>" +
+        "</p>" +
+        "<p> Remove 'Kiwi' from first:" +
+        fruits.shift() +
+        "<br> <b>[" +
+        fruits +
+        "]</b>" +
+        "</p>" +
+        "<p> Slice a piece from 3rd element: <b>[" +
+        fruits.slice(2) +
+        "]</b>"+
+        "</p>";
+    </script>
+  </body>
+</html>

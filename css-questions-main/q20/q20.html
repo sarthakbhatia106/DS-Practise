@@ -1,0 +1,61 @@
+<!-- Q- With the given html draw image-final  -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+          *{
+            margin: 0;
+            box-sizing: border-box;
+          }
+          body{
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+          .face{
+            height: 30rem;
+            width: 30rem;
+            border-radius: 50%;
+            background-color: #F3AA1E;
+            display: flex;
+          }
+          .eyes{
+            height: 8rem;
+            width: 5rem;
+            background-color: #9D582C;
+            border-radius: 50%;
+            position: relative;
+            top: 7rem;
+          }
+          .left{
+            left: 6rem;
+          }
+          .right{
+            left: 14rem;
+          }
+          .smile{
+            position: relative;
+            width: 15rem;
+            height: 4rem;
+            background-color: #9D582C;
+            border-bottom-left-radius: 100% 200%;
+            border-bottom-right-radius: 100% 200%;
+            top:19rem;
+            right: 2.5rem;
+          }
+    </style>
+  </head>
+  <body>
+    <div class="face">
+      <div class="eyes left"></div>
+      <div class="eyes right"></div>
+      <div class="smile"></div>
+    </div>
+  </body>
+</html>

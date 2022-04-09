@@ -1,0 +1,106 @@
+class Solution {
+    public int regionsBySlashes(String[] grid) {
+        
+        int n=grid.length;
+        int dots=n+1;
+        
+        ArrayList<ArrayList<Integer>> graph=new ArrayList<>();
+        for(int i=0;i<dots*dots;i++){
+            graph.add(new ArrayList<>());
+        }
+        int edges=0;
+        
+        for(int i=0;i<dots;i++){
+            for(int j=0;j<dots;j++){
+                int cellno=i*dots+j;
+                if(i==0 && j==0){
+                    continue;
+                }else if(i==0){
+                    int prevCell=i*dots+j-1;
+                    graph.get(cellno).add(prevCell);
+                    graph.get(prevCell).add(cellno);
+                    edges++;
+                }else if(j==0){
+                    int prevCell=(i-1)*dots+j;
+                    graph.get(cellno).add(prevCell);
+                    graph.get(prevCell).add(cellno);
+                    edges++;
+
+                }else if(i==dots-1 && j==dots-1){
+                    int prevCell=(i-1)*dots+j;
+                    graph.get(cellno).add(prevCell);
+                    graph.get(prevCell).add(cellno);
+                    
+                    prevCell=i*dots+j-1;
+                    graph.get(cellno).add(prevCell);
+                    graph.get(prevCell).add(cellno);
+                    
+                     edges+=2;
+
+                }else if(i==dots-1){
+                    int prevCell=i*dots+j-1;
+                    graph.get(cellno).add(prevCell);
+                    graph.get(prevCell).add(cellno);
+                    edges++;
+                }else if(j==dots-1){
+                    int prevCell=(i-1)*dots+j;
+                    graph.get(cellno).add(prevCell);
+                    graph.get(prevCell).add(cellno);
+                    edges++;
+
+                }
+            }
+        }
+    
+        for(int i=0;i<grid.length;i++){
+            
+            char []ch=grid[i].toCharArray();
+            
+            for(int j=0;j<ch.length;j++){
+                if(ch[j]=='/'){
+                    
+                    int cellno1=(i+1)*dots+j;
+                    int cellno2=i*dots+j+1;
+                    graph.get(cellno1).add(cellno2);
+                    graph.get(cellno2).add(cellno1);
+                    edges++;
+
+                    
+                }else if(ch[j]=='\\'){
+                    int cellno1=(i)*dots+j;
+                    int cellno2=(i+1)*dots+j+1;
+                    graph.get(cellno1).add(cellno2);
+                    graph.get(cellno2).add(cellno1);
+                     edges++;
+
+                }
+            }
+        }
+        System.out.println(graph);
+        int ans=0;
+        boolean []vis=new boolean [graph.size()];
+        for(int i=0;i<graph.size();i++){
+            if(vis[i]==false){
+                System.out.println(i+" "+ans);
+                dfs(graph,i,vis);
+                ans++;
+            }
+        }
+        return ans;
+        // ans=edges+2-graph.size();
+        // return ans-1;
+    }
+    public void dfs(ArrayList<ArrayList<Integer>> graph,int src,boolean []vis){
+        System.out.println(src);
+        vis[src]=true;
+        
+        int calls=0;
+        for(int i: graph.get(src)){
+            if(vis[i]==false){
+                dfs(graph,i,vis);
+                calls++;
+            }
+        }
+        if(calls==0)return;
+    }
+}

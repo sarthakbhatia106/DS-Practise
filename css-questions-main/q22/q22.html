@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!-- Q- Create image-final by styling the following html -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      *{
+        box-sizing: border-box;
+        margin: 0;
+      }
+      body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+      .container{
+        height: 80vh;
+        width: 80vw;
+      }
+      .sub-container-1{
+        width: 100%;
+        height: 30%;
+        background-color: #4B6584;
+        display: flex;
+      }
+      .sub-container-2{
+        width: 100%;
+        height: 70%;
+        background-color: #778CA3;
+        display: flex;
+      }
+      .sub-container-1 .items{
+        height: calc(100% - 20px);
+        width: calc(20% - 20px);
+        background-color: #D1D8E0;
+        margin: 10px;
+      }
+      .inner-sub-container-1{
+        background-color: #778CA3;
+        height: 100%;
+        width: 20%;
+      }
+      .inner-sub-container-1 .items{
+        background-color: #A5B1C2;
+        height: calc(50% - 20px);
+        width: calc(100% - 20px);
+        margin: 10px;
+      }
+      .inner-sub-container-2{
+        height: 100%;
+        width: 20%;
+        background-color: #4B4B4B;
+      }
+      .inner-sub-container-3{
+        height: 100%;
+        width: 60%;
+        background-color: #596275;
+      }
+      .inner-sub-container-3 .items{
+        background-color: #303952;
+        margin: 50px;
+        height: calc(100% - 100px);
+        width: calc(100% - 100px);
+
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="sub-container-1">
+        <div class="items"></div>
+        <div class="items"></div>
+        <div class="items"></div>
+        <div class="items"></div>
+        <div class="items"></div>
+      </div>
+      <div class="sub-container-2">
+        <div class="inner-sub-container-1">
+          <div class="items"></div>
+          <div class="items"></div>
+        </div>
+        <div class="inner-sub-container-2"></div>
+        <div class="inner-sub-container-3">
+          <div class="items"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

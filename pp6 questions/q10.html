@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .a{
+        color: red;
+      }
+      .b{
+        color: green;
+      }
+      .c{
+        color: blue;  
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Q- Make a's red, b's green and c's blue</h1>
+    <div>
+      <div>
+        c
+        <div></div>
+        <div>
+          <div>b</div>
+        </div>
+        <div></div>
+      </div>
+      <div>
+        <div>
+          c
+          <div>
+            b
+            <div>a</div>
+            <div></div>
+            <div></div>
+            <div>a</div>
+          </div>
+          <div></div>
+        </div>
+      </div>
+    </div>
+    <script>
+      let divs=document.querySelectorAll("div");
+      console.log(divs)
+      for(let i=0;i<divs.length;i++){
+        if(divs[i].innerText==""){
+          continue;
+        }else{
+          if(divs[i].innerText.trim().split("\n")[0]=='a'){
+            divs[i].classList.add("a");
+          }
+
+          if(divs[i].innerText.trim().split("\n")[0]=='b'){
+            divs[i].classList.add("b");
+          }
+
+          if(divs[i].innerText.trim().split("\n")[0]=='c'){
+            divs[i].classList.add("c");
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+
+        body{
+            margin: 0;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <canvas></canvas>
+    <script>
+        let canvas=document.querySelector("canvas");
+        canvas.height=window.innerHeight;
+        canvas.width=window.innerWidth;
+
+        let ctx=canvas.getContext("2d");//gets context to draw something 2d
+        // ctx.beginPath();//move cursor to 0,0
+        // ctx.moveTo(100,200);//move cursor to 100,200
+        // ctx.lineTo(300,400);//draws a line from pointer start to 300,400
+        // ctx.strokeStyle="blue";//line will be blue
+        // ctx.lineWidth=20;
+        // ctx.stroke();//draws the work done i.e. it will show the user what is drawn
+        // ctx.beginPath();
+        // ctx.moveTo(300,400);
+        // ctx.lineTo(600,200);
+        // ctx.strokeStyle="red";
+        // ctx.stroke();
+
+        let img=document.createElement("img");
+        img.src="img.jpg";
+
+        //we are using this because image will be loaded after some seconds
+        img.addEventListener("load",function(){
+            ctx.drawImage(img,0,0);//draws image on canvas starting from 0,0
+        })
+
+    </script>
+</body>
+</html>

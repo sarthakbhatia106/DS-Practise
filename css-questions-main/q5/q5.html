@@ -1,0 +1,73 @@
+<!--Q- Given the html below style it so that it looks like "img-final". Note that you cannot change html or add any extra classes, you just have to write css. Also google font - "Dancing Script" is used and link for the same is already added in the code  -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *{
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body{
+        background-color: white;
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .card{
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        border: 50px solid rgb(124,84,68);
+        background-color: #ebe3cb;
+        color: rgb(124,84,68);
+      }
+      li{
+        font-size: xx-large;
+        margin-bottom: 18px;
+      }
+      h1{
+        height: 30vh;
+        width: 50vw;
+        font-size: 70px;
+        align-items: center;
+        text-align: center;
+        font-family: "dancing script",cursive;
+        display: grid
+      }
+      span{
+        font-size: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <h1>
+        Les Papilles <br />
+        <span>(Menu)</span>
+      </h1>
+      <ol>
+        <li>Cheese Cheddar Burger</li>
+        <li>Quadro Formaggi Pizza</li>
+        <li>Overfilled Cheese Lasagna</li>
+        <li>Mac and Cheese</li>
+        <li>Mozzarella Linguine</li>
+        <li>Arabiata Spaghetti</li>
+        <li>Cadillac Margarita</li>
+        <li>Harvey Wallbanger</li>
+      </ol>
+    </div>
+  </body>
+</html>

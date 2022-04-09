@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <input id="name" type="text" placeholder="Db name" value="DB" />
+    <input type="number" id="version" placeholder="1.0" value="1" />
+    <button id="create">Create</button>
+
+    <hr />
+    <!-- these will help add data to database -->
+    <input type="text" id="Note" placeholder="Your Note" />
+    <button id="add">Add Note</button>
+
+    <script>
+      let name = document.querySelector("#name");
+      let version = document.querySelector("#version");
+      let btn = document.querySelector("button#create");
+
+      let note = document.querySelector("#Note");
+      let addBtn = document.querySelector("#add");
+
+      let db, v, dbAcces;
+
+      addBtn.addEventListener("click", function () {
+        let val = note.value;
+        //is database access is not present
+        if (!dbAcces) {
+          alert("Please open a Database to add node");
+          return;
+        }
+        //it lets us get the cs object store from data base with readwrite functionality 
+        let tx = dbAcces.transaction("cs", "readwrite");
+        //cs object store
+        let csObjectStore=tx.objectStore("cs");
+        //making the data to be added
+        let data={
+            nId: Date.now(),
+            noteValue:val
+        }
+        //data being added to the cs object store
+        csObjectStore.add(data);
+      });
+
+      btn.addEventListener("click", function () {
+        db = name.value;
+        v = version.value;
+        //make or open the database with name db and version v
+        let request = indexedDB.open(db, v);
+        request.addEventListener("success", function () {
+          alert("db was created");
+          //object store can not be done in success event
+          dbAcces = request.result;
+          viewNotes();
+        });
+
+        request.addEventListener("upgradeneeded", function () {
+          alert("upgrade occured");
+          let db = request.result;
+          //object store can only be done in upgradeneeded event
+          db.createObjectStore("cs", {
+            keyPath: "nId",
+          });
+        });
+
+        request.addEventListener("error", function () {
+          alert("some error occured");
+        });
+      });
+
+      function viewNotes(){
+        //code jab hum database open kare to cs ke object store se saare objects print ho jaye
+        //assumption ki jab bhi ye function chalega mere pass dbAccess hoga
+
+        let tx=dbAcces.transaction("cs","readonly");
+        let csObjectStore=tx.objectStore("cs");
+
+        //request to open a cursor which will point to first object of object store
+        let req=csObjectStore.openCursor();
+
+        req.addEventListener("success",function(){
+          //cursor points to first object in object store;
+          let cursor=req.result;
+          if(cursor){
+            console.log(cursor.value);
+            cursor.continue();
+          }
+
+        })
+      }
+    </script>
+  </body>
+</html>

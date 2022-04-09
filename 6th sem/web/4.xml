@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="4.css"?>
+<students>
+	<heading>Student Information- IT department(MAIT)</heading>
+	<student>
+		<name>Name -: Abhay Sharma</name>
+		<RollNo>Roll-No -: 0512612671</RollNo>
+		<group>Group -: I-1</group>
+		<dob>D.O.B -: 03/10/1999</dob>
+	</student>
+	<student>
+		<name>Name -: Bhavay Jain</name>
+		<RollNo>Roll-No -: 8328324263</RollNo>
+		<group>Group -: I-4</group>
+		<dob>D.O.B -: 06/12/2000</dob>
+	</student>
+	<student>
+		<name>Name -: Saksham Bansal</name>
+		<RollNo>Roll-No -: 1771480311</RollNo>
+		<group>Group -: I-4</group>
+		<dob>D.O.B -: 04/06/1999</dob>
+	</student>
+	<student>
+		<name>Name -: Shweta Sharma</name>
+		<RollNo>Roll-No -: 8038939012</RollNo>
+		<group>Group -: I-7</group>
+		<dob>D.O.B -: 23/01/1999</dob>
+	</student>
+	<student>
+		<name>Name -: Yashika Garg</name>
+		<RollNo>Roll-No -: 8737309129</RollNo>
+		<group>Group -: I-6</group>
+		<dob>D.O.B -: 10/11/1999</dob>
+	</student>
+</students>
